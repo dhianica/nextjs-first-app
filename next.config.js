@@ -1,4 +1,16 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
+
+const path = require('path');
+
+const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    appDir: true,
+    newNextLinkBehavior: false,
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
 }
+
+module.exports = nextConfig
